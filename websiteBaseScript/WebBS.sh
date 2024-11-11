@@ -25,13 +25,41 @@ cat <<EOL > index.html
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-  <title>F&B</title>
+  <title>WebBS</title>
 </head>
 <body id="body">
   <div class="wrapper">
-    <div class="header"></div>
-    <div class="main"></div>
-    <div class="footer"></div>
+    <header class="header">
+      <div class="header_top">
+        <div class="container">
+          <div class="header_top-inner">header_top</div>
+        </div>
+      </div>
+      <div class="header_body">
+        <div class="container">
+          <div class="header_body-inner">header_body</div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main_about" id="about">
+        <div class="container">
+          <div class="about-inner">main_about</div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer_top">
+        <div class="container">
+          <div class="footer_top-inner">footer_top</div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="container">
+          <div class="footer_bottom-inner">footer_bottom</div>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
 <script src="js/app.js"></script>
@@ -61,6 +89,110 @@ html, body {
   padding: 0 15px;
   margin: 0 auto;
   height: 100%;
+}
+
+.main_about {
+  padding: 180px 0 160px;
+}
+
+
+
+/*= HEADER ======================================================================================*/
+/*= HEADER ======================================================================================*/
+/*= HEADER ======================================================================================*/
+
+
+
+
+.header {
+  font-weight: 700;
+  background:
+    linear-gradient(55.95deg,
+      rgba(255, 63, 58, 0.2) 0%,
+      rgba(247, 94, 5, 0.2) 100%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/*- HEADER-TOP ----------------------------------------------------------------------------------*/
+/*- HEADER-TOP ----------------------------------------------------------------------------------*/
+/*- HEADER-TOP ----------------------------------------------------------------------------------*/
+
+
+
+
+
+.header_top-inner {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/*- HEADER-BODY ---------------------------------------------------------------------------------*/
+/*- HEADER-BODY ---------------------------------------------------------------------------------*/
+
+.header_body {
+  flex-grow: 1;
+}
+
+.header_body-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+/*= FOOTER ======================================================================================*/
+/*- FOOTER --------------------------------------------------------------------------------------*/
+/*- FOOTER --------------------------------------------------------------------------------------*/
+
+
+
+.footer {
+  color: #fff;
+}
+
+
+/*= FOOTER TOP ======================================================================================*/
+/*- FOOTER TOP --------------------------------------------------------------------------------------*/
+/*- FOOTER TOP --------------------------------------------------------------------------------------*/
+
+
+
+.footer_top {
+  background-color: var(--gray-900, #1E212C);
+  padding: 80px 0 60px;
+}
+
+.footer_top-inner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -15px;
+  width: 100%;
+}
+
+
+/*= FOOTER BOTTOM ======================================================================================*/
+/*- FOOTER BOTTOM --------------------------------------------------------------------------------------*/
+/*- FOOTER BOTTOM --------------------------------------------------------------------------------------*/
+
+
+
+
+.footer_bottom {
+  background-color: #292C37;
+}
+
+.footer_bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
 EOL
 
