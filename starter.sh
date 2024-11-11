@@ -1,19 +1,19 @@
 #!/bin/bash
 
-echo "Navigating to the script directory..."
+echo -e "\033[33mNavigating to the script directory...\033[0m"
 cd websiteBaseScript || { echo "Directory not found"; exit 1; }
 
 # Step 1: Give execution permissions to the script in the current directory
-echo "Giving execution permissions to the script..."
+echo -e "\033[33mGiving execution permissions to the script...\033[0m"
 chmod +x WebBS.sh
 
 # Step 2: Copy the script to a directory in the PATH
-echo "Copying the script to /usr/local/bin..."
+echo -e "\033[33mCopying the script to /usr/local/bin...\033[0m"
 sudo cp ./WebBS.sh /usr/local/bin/
 
 # Step 3: Ensure the script has execution permissions in its new location
-echo "Ensuring the script has execution permissions in /usr/local/bin..."
+echo -e "\033[33mEnsuring the script has execution permissions in /usr/local/bin...\033[0m"
 chmod +x /usr/local/bin/WebBS.sh
 
-echo "Script setup completed successfully!\n You can now run the script from any directory using the command:"
-echo "     WebBS.sh <Your_project_name>"
+echo -e "\033[32mScript setup completed successfully!\n You can now run the script from any directory using the command:\033[0m"
+echo -e "\033[34m     WebBS.sh\033[0m <Your_project_name>"
