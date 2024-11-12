@@ -235,8 +235,10 @@ EOL
 
 # Create JavaScript file
 cat <<EOL > js/app.js
+$(function () {
 // Basic JavaScript functionality
 console.log('Welcome to My Website!');
+})
 EOL
 
 # Completion message
