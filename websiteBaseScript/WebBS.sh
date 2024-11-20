@@ -1,14 +1,6 @@
 #!/bin/bash
 
-# Check if a repository name was provided as an argument
-if [ -z "$1" ]; then
-  echo "Usage: $0 <repository-name>"
-  exit 1
-fi
-
-# Create a new directory with the given repository name
-mkdir "$1" && cd "$1"
-
+create_structure() {
 # Initialize a new Git repository in the current directory
 git init
 
@@ -235,8 +227,10 @@ EOL
 
 # Create JavaScript file
 cat <<EOL > js/app.js
+$(function () {
 // Basic JavaScript functionality
 console.log('Welcome to My Website!');
+})
 EOL
 
 # Completion message
@@ -304,3 +298,29 @@ git commit -m "The foundation of the lending site has been created"
 
 # Completion message
 echo "Repository initialized successfully in the current directory with an initial commit!"
+}
+
+# Function for requesting confirmation
+confirm() {
+  while true; do
+    read -rp "Are you sure you want to create the structure for '$1'? (y/n): " answer
+    case $answer in
+      [Yy]* ) return 0;; # Пользователь подтвердил
+      [Nn]* ) echo "Action canceled."; exit 0;; # Пользователь отменил
+      * ) echo "Please answer 'y' (yes) or 'n' (no).";; # Неверный ввод
+    esac
+  done
+}
+
+# Checking if an argument has been entered
+if [ -z "$1" ]; then
+  # If no name is specified, we use the name of the current directory
+  current_dir_name=$(basename "$PWD")
+  confirm "$current_dir_name"
+  create_structure "$current_dir_name"
+else
+  # If a name is specified, create a new directory with that name
+  confirm "$1"
+  mkdir -p "$1" && cd "$1"
+  create_structure "$1"
+fi
