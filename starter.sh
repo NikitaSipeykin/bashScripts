@@ -16,4 +16,5 @@ echo -e "\033[33mEnsuring the script has execution permissions in /usr/local/bin
 chmod +x /usr/local/bin/WebBS.sh
 
 echo -e "\033[32mScript setup completed successfully!\n You can now run the script from any directory using the command:\033[0m"
-echo -e "\033[34m     WebBS.sh\033[0m <Your_project_name>"
+echo -e "\033[34m     WebBS.sh\033[0m <Your_project_name> adds the web site structure to a separate folder in the current directory"
+echo -e "\033[34m     WebBS.sh\033[0m - adds the web site structure to the current directory"
