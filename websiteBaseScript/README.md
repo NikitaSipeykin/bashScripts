@@ -1,24 +1,41 @@
 # WebBS.sh Website Base Script
-## Для использования этого скрипта на macOS и обеспечения его вызова из любой директории с созданием структуры проекта в текущей рабочей папке, выполните следующие шаги:
+## To use this script on macOS and have it called from any directory with a project structure in the current working folder, follow these steps:
 
-### 1. **Используйте скрипт из любой директории**:
-   - Теперь вы можете вызвать скрипт из любой папки, просто введя:
-     ```bash
-     WebBS.sh <Your_project_name>
-     ```
-     - Как результат в выбраной папке создасться папка со структурой вэб-сайта.
-     или
-       ```bash
-     WebBS.sh 
-     ```
-     - Как результат в выбраной папке создасться структура вэб-сайта.
+### 1. **Use the script from any directory**:
+- You can now invoke the script from any directory by simply typing:
+  ```bash
+  WebBS.sh <Your_project_name>
+  ```
+    - As a result, a folder** with the structure of the website will be created in the **selected folder.
+  #### or
+  ```bash
+  WebBS.sh 
+  ```
+    - As a result, a folder** with the structure of the website will be created in the **selected folder.
 
-### После выполнения этих шагов скрипт создаст структуру веб-сайта с папками и файлами а именно:
-- Основную папку куда будет помещен проект и будет создан репозиторий;
-- Файл **README.md**;
-- Файл **.gitignore** уже в готовом виде;
-- Папки под стили **css**, изображения **images**, шрифты **fonts**;
-- Файлы стилей **style.css**, очистки стилей **reset.css**, добавления шрифтов **fonts.css**; 
-- Файл javascript **app.js**;
-- Файл **index.html** с базовой структурой и прикрученными остальными файлами;
- Этот подход сделает скрипт глобально доступным и обеспечит создание структуры проекта в текущей директории, из которой вы его запускаете.
+
+### After performing these steps, the script will create a website structure with folders and files, namely:
+- The main folder where the project will be placed and the repository will be created;
+- File **README.md**;
+- The **.gitignore** file already in the ready form;
+- Folders for **css** styles, **images** images, **fonts** fonts;
+- Style files **style.css**, style cleanup **reset.css**, font addition **fonts.css**;
+- The javascript file **app.js**;
+- An **index.html** file with the basic structure and the rest of the files bolted on;
+  This approach will make the script globally accessible and ensure that the project structure is created in the current directory from which you run it.
+
+### Here the folder three:
+```bash
+Current folder/
+├── index.html/
+├── css/
+│   ├── style.css/
+│   ├── reset.css/
+│   ├── fonts.css/
+├── js/
+│   ├── app.js/
+├── fonts/
+├── images/
+├── .gitignore/
+├── README.md/
+```
