@@ -6,40 +6,47 @@ RED="\033[31m"
 BLUE="\033[34m"
 RESET="\033[0m"
 
-echo -e "${YELLOW}Starting HomeBrew installation...${RESET}"
-source ./config/HomeBrewInstaller.sh
-echo -e "${GREEN}Installation completed!${RESET}"
+confirm_and_run() {
+    local message=$1
+    local script_path=$2
+
+    read -p "$(echo -e ${YELLOW}${message}" (y/n): "${RESET})" choice
+    case "$choice" in
+        y|Y )
+            if [[ -f "$script_path" ]]; then
+                echo -e "${YELLOW}Running $script_path...${RESET}"
+                bash "$script_path"
+            else
+                echo -e "${RED}Error: $script_path not found!${RESET}"
+            fi
+            ;;
+        * )
+            echo -e "${GREEN}Skipping $script_path...${RESET}"
+            ;;
+    esac
+}
 
 # WORKSPACE CREATOR
-SCRIPT_PATH="./workspaceCreator/WSCreator.sh"
+confirm_and_run "Do you want to run WSCreator.sh?" "./workspaceCreator/WSCreator.sh"
 
-if [[ -f "$SCRIPT_PATH" ]]; then
-    echo -e "${YELLOW}Running WSCreator.sh...${RESET}"
-    bash "$SCRIPT_PATH"
-else
-    echo -e "${RED}Error: WSCreator.sh not found in workspaceCreator/${RESET}"
-fi
-echo -e "${GREEN}Continuing execution...${RESET}"
-
-echo -e "${YELLOW}Starting AppInstaller installation...${RESET}"
-source ./config/AppInstaller.sh
-echo -e "${GREEN}Installation completed!${RESET}"
+# APP INSTALLER
+confirm_and_run "Do you want to run AppInstaller.sh?" "./config/AppInstaller.sh"
 
 # WEBSITE BASE CREATOR
 echo -e "${YELLOW}Navigating to the script directory...${RESET}"
 cd websiteBaseScript || { echo -e "${RED}Directory not found${RESET}"; exit 1; }
-# Step 1: Give execution permissions to the script in the current directory
-echo -e "${YELLOW}Giving execution permissions to the script...${RESET}"
+
+echo -e "${YELLOW}Giving execution permissions to WebBS.sh...${RESET}"
 chmod +x WebBS.sh
-# Step 2: Copy the script to a directory in the PATH
-echo -e "${YELLOW}Copying the script to /usr/local/bin...${RESET}"
+
+echo -e "${YELLOW}Copying WebBS.sh to /usr/local/bin...${RESET}"
 sudo cp ./WebBS.sh /usr/local/bin/
-# Step 3: Ensure the script has execution permissions in its new location
-echo -e "${YELLOW}Ensuring the script has execution permissions in /usr/local/bin...${RESET}"
+
+echo -e "${YELLOW}Ensuring WebBS.sh has execution permissions...${RESET}"
 chmod +x /usr/local/bin/WebBS.sh
 cd ..
 
 # RESULT
-echo -e "${GREEN}Script setup completed successfully!\n You can now run the script from any directory using the command:${RESET}"
-echo -e "${BLUE}     WebBS.sh <Your_project_name>${RESET} adds the web site structure to a separate folder in the current directory"
-echo -e "${BLUE}     WebBS.sh${RESET} - adds the web site structure to the current directory"
+echo -e "${GREEN}Script setup completed successfully!${RESET}"
+echo -e "${BLUE}WebBS.sh <Your_project_name>${RESET} - Adds the web site structure to a separate folder in the current directory"
+echo -e "${BLUE}WebBS.sh${RESET} - Adds the web site structure to the current directory"
