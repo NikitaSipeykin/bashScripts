@@ -1,6 +1,7 @@
 # WebBS.sh Website Base Script
 ## To use this script on macOS and have it called from any directory with a project structure in the current working folder, follow these steps:
 
+<<<<<<< HEAD
 ### 1. **Use the script from any directory**:
 - You can now invoke the script from any directory by simply typing:
   ```bash
@@ -12,6 +13,19 @@
   WebBS.sh 
   ```
     - As a result, a folder** with the structure of the website will be created in the **selected folder.
+=======
+### 1. **Используйте скрипт из любой директории**:
+   - Теперь вы можете вызвать скрипт из любой папки, просто введя:
+     ```bash
+     WebBS.sh <Your_project_name>
+     ```
+     - Как результат в выбраной папке создасться папка со структурой вэб-сайта.
+     или
+       ```bash
+     WebBS.sh 
+     ```
+     - Как результат в выбраной папке создасться структура вэб-сайта.
+>>>>>>> gitScriptBase
 
 ### After performing these steps, the script will create a website structure with folders and files, namely:
 - The main folder where the project will be placed and the repository will be created;

@@ -31,6 +31,10 @@ cd ..
 # RESULT
 echo -e "\033[32mScript setup completed successfully!\n You can now run the script from any directory using the command:\033[0m"
 echo -e "\033[34m     WebBS.sh\033[0m <Your_project_name> adds the web site structure to a separate folder in the current directory"
+<<<<<<< HEAD
 echo -e "\033[34m     WebBS.sh\033[0m - adds the web site structure to the current directory"
 echo -e "\033[34m     WSCreator.sh\033[0m - adds the folder three inside \"Documents\" folder"
 
+=======
+echo -e "\033[34m     WebBS.sh\033[0m - adds the web site structure to the current directory"
+>>>>>>> gitScriptBase
