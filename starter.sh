@@ -29,6 +29,9 @@ confirm_and_run() {
 # WORKSPACE CREATOR
 confirm_and_run "Do you want to run WSCreator.sh?" "./workspaceCreator/WSCreator.sh"
 
+# HOMEBREW INSTALLER
+confirm_and_run "Do you want to run HomeBrewInstaller.sh?" "./config/HomeBrewInstaller.sh"
+
 # APP INSTALLER
 confirm_and_run "Do you want to run AppInstaller.sh?" "./config/AppInstaller.sh"
 
