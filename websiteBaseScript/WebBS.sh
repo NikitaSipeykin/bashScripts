@@ -305,9 +305,9 @@ confirm() {
   while true; do
     read -rp "Are you sure you want to create the structure for '$1'? (y/n): " answer
     case $answer in
-      [Yy]* ) return 0;; # Пользователь подтвердил
-      [Nn]* ) echo "Action canceled."; exit 0;; # Пользователь отменил
-      * ) echo "Please answer 'y' (yes) or 'n' (no).";; # Неверный ввод
+      [Yy]* ) return 0;; # user approve
+      [Nn]* ) echo "Action canceled."; exit 0;; # user cancel
+      * ) echo "Please answer 'y' (yes) or 'n' (no).";; # wrong spelling
     esac
   done
 }
